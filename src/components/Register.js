@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { Button, TextField, Typography, Container, Grid, Box } from '@mui/material';
 import axiosInstance from '../axios';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,6 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const Register = () => {
         username,
         email,
         password,
-        role,
+        role: "student",
       });
       navigate('/login'); // Redirect to login page after successful registration
     } catch (err) {
