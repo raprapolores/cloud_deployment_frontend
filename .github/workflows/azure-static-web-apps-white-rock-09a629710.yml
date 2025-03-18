@@ -24,6 +24,8 @@ jobs:
           lfs: false
       - name: Check Node.js version
         run: node -v
+      - name: Check npm version
+        run: npm -v  
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
