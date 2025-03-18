@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, Grid, Box } from '@mui/material';
 import axiosInstance from '../axios';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +19,9 @@ const Register = () => {
         password,
         role: "student",
       });
-      navigate('/login'); // Redirect to login page after successful registration
+      if(response) {
+        navigate('/login'); // Redirect to login page after successful registration
+      }
     } catch (err) {
       setError(err.response ? err.response.data.message : 'Registration failed');
     }
