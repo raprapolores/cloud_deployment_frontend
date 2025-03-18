@@ -26,13 +26,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-  
-      - name: Disable cache temporarily (if caching is enabled)
-        run: |
-          rm -rf node_modules
-          npm install
-      - run: chmod +x update-node-latest.sh
-      - run: update-node-to-latest.sh 
             
       - name: Build And Deploy
         id: builddeploy
