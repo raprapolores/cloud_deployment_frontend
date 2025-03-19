@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axiosInstance.post('auth/login', { email, password });
+      const response = await axiosInstance.post('/auth/login', { email, password });
       localStorage.setItem('token', response.data.token);
       if(response.data.role === "student") {
         navigate('/dashboard');
