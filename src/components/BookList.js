@@ -26,7 +26,6 @@ const BookList = () => {
       { bookId: id },
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    alert('Book borrowed');
     fetchBooks();
   };
 
@@ -37,7 +36,6 @@ const BookList = () => {
       { bookId: id },
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    alert('Book returned');
     fetchBooks();
   };
 
