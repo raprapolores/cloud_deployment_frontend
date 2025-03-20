@@ -35,7 +35,6 @@ const AdminPage = () => {
         { title, author },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      alert('Book added');
       setTitle('');
       setAuthor('');
       fetchBooks(); // Re-fetch the book list after adding a book
@@ -53,7 +52,6 @@ const AdminPage = () => {
         { title, author, id: editing.id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      alert('Book updated');
       setEditing(null); // Reset the editing state
       setTitle('');
       setAuthor('');
@@ -70,7 +68,6 @@ const AdminPage = () => {
       await axiosInstance.delete(`/books/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      alert('Book deleted');
       fetchBooks(); // Re-fetch the book list after deleting a book
     } catch (error) {
       console.error('Error deleting book:', error);
